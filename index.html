@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denny's Café & Wein – Café & Garten in Hamburg-Nord</title>
+<meta name="description" content="Denny's Café & Wein: gemütliches Café mit Garten neben dem Blumenladen in Hamburg-Nord. Kaffee, Kuchen, Waffeln, Wein & mehr. 4,9★ bei 214 Bewertungen.">
+<link rel="icon" type="image/jpeg" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#15803D',
+          'on-primary': '#FFFFFF',
+          secondary: '#22C55E',
+          accent: '#DB2777',
+          'on-accent': '#FFFFFF',
+          background: '#F7FBF1',
+          foreground: '#153524',
+          card: '#FFFFFF',
+          muted: '#EAF3E4',
+          'muted-foreground': '#4B6355',
+          border: '#D9EDD0',
+        },
+        fontFamily: {
+          display: ['Lora', 'serif'],
+          body: ['Raleway', 'sans-serif'],
+        },
+        spacing: { '18': '4.5rem' },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Raleway', sans-serif; }
+  h1, h2, h3, .font-display { font-family: 'Lora', serif; }
+  .focus-ring:focus-visible { outline: 3px solid #15803D; outline-offset: 2px; }
+  .star { color: #DB2777; }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 700ms ease-out, transform 700ms ease-out; }
+  .reveal.is-visible { opacity: 1; transform: none; }
+  .reveal-d1 { transition-delay: 80ms; }
+  .reveal-d2 { transition-delay: 160ms; }
+  .reveal-d3 { transition-delay: 240ms; }
+  .reveal-d4 { transition-delay: 320ms; }
+
+  .petal-blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.35; pointer-events: none; }
+
+  @keyframes float-slow { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-14px) rotate(6deg); } }
+  .float-slow { animation: float-slow 7s ease-in-out infinite; }
+
+  .tab-panel[hidden] { display: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .float-slow { animation: none !important; }
+    * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body class="bg-background text-foreground antialiased overflow-x-hidden">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-primary text-on-primary px-4 py-2 rounded-md">Zum Inhalt springen</a>
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-40 bg-background/90 backdrop-blur border-b border-border">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-18 py-3" aria-label="Hauptnavigation">
+      <a href="#main" class="flex items-center gap-3 focus-ring rounded-sm">
+        <img src="images/logo.jpg" alt="Denny's Café & Wein Logo" class="w-11 h-11 rounded-full object-cover border border-border" width="150" height="150">
+        <span class="font-display text-xl sm:text-2xl text-primary tracking-wide">Denny's Café &amp; Wein</span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium" id="nav-links">
+        <a data-nav href="#ueber-uns" class="hover:text-primary transition-colors duration-200 focus-ring rounded-sm">Über uns</a>
+        <a data-nav href="#speisekarte" class="hover:text-primary transition-colors duration-200 focus-ring rounded-sm">Speisekarte</a>
+        <a data-nav href="#galerie" class="hover:text-primary transition-colors duration-200 focus-ring rounded-sm">Ambiente</a>
+        <a data-nav href="#bewertungen" class="hover:text-primary transition-colors duration-200 focus-ring rounded-sm">Bewertungen</a>
+        <a data-nav href="#standort" class="hover:text-primary transition-colors duration-200 focus-ring rounded-sm">Standort</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="tel:+4940222796" class="cursor-pointer hidden sm:inline-flex items-center gap-2 bg-accent text-on-accent px-4 py-2.5 rounded-full text-sm font-semibold hover:bg-primary transition-colors duration-200 focus-ring">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Anrufen
+        </a>
+        <button id="menu-toggle" type="button" class="cursor-pointer md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full hover:bg-muted transition-colors duration-200 focus-ring" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
+          <svg id="icon-open" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-border bg-background">
+      <div class="flex flex-col px-4 py-3 text-sm font-medium">
+        <a data-nav href="#ueber-uns" class="py-3 border-b border-border">Über uns</a>
+        <a data-nav href="#speisekarte" class="py-3 border-b border-border">Speisekarte</a>
+        <a data-nav href="#galerie" class="py-3 border-b border-border">Ambiente</a>
+        <a data-nav href="#bewertungen" class="py-3 border-b border-border">Bewertungen</a>
+        <a data-nav href="#standort" class="py-3 border-b border-border">Standort</a>
+        <a href="tel:+4940222796" class="py-3 text-accent font-semibold">Anrufen · 040 222796</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="petal-blob w-72 h-72 bg-accent -top-10 -left-10" aria-hidden="true"></div>
+      <div class="petal-blob w-96 h-96 bg-secondary top-40 -right-24" aria-hidden="true"></div>
+      <svg class="hidden lg:block float-slow absolute top-24 right-[38%] w-10 h-10 text-secondary/60" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2 3 2 6 0 9-2-3-2-6 0-9zm0 22c-2-3-2-6 0-9 2 3 2 6 0 9zM2 12c3-2 6-2 9 0-3 2-6 2-9 0zm22 0c-3 2-6 2-9 0 3-2 6-2 9 0z"/></svg>
+
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="reveal inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-1.5 text-sm font-medium mb-6 shadow-sm" role="img" aria-label="Bewertung 4,9 von 5 Sternen, 214 Rezensionen">
+            <span class="star flex" aria-hidden="true">★★★★★</span>
+            <span class="text-muted-foreground">4,9 · <span id="count-reviews">0</span> Rezensionen</span>
+          </div>
+          <h1 class="reveal reveal-d1 text-4xl sm:text-5xl lg:text-6xl leading-tight text-primary mb-6">
+            Willkommen bei<br>Denny's Café &amp; Wein
+          </h1>
+          <p class="reveal reveal-d2 text-lg text-foreground/80 mb-8 max-w-md">
+            Ihr gemütliches Café direkt neben dem Blumenladen in Hamburg-Nord. Frischer Kuchen, aromatischer Kaffee und ein ruhiger Garten mitten in der Stadt.
+          </p>
+          <div class="reveal reveal-d3 flex flex-wrap gap-4">
+            <a href="#standort" class="cursor-pointer inline-flex items-center justify-center bg-accent text-on-accent px-6 py-3.5 rounded-full font-semibold hover:bg-primary transition-colors duration-200 focus-ring">
+              Route planen
+            </a>
+            <a href="#speisekarte" class="cursor-pointer inline-flex items-center justify-center bg-card border border-border text-foreground px-6 py-3.5 rounded-full font-semibold hover:bg-muted transition-colors duration-200 focus-ring">
+              Speisekarte ansehen
+            </a>
+          </div>
+          <div class="reveal reveal-d4 mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-foreground/70">
+            <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Geöffnet · schließt um 21:00 Uhr</span>
+            <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Papenhuder Str. 58, Hamburg-Nord</span>
+            <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/></svg>10–20 € pro Person</span>
+          </div>
+        </div>
+        <div class="reveal reveal-d2 relative">
+          <div class="aspect-[4/5] rounded-[28px] bg-card border border-border shadow-xl overflow-hidden">
+            <img src="images/garden-terrace.jpg" alt="Gemütlicher Gartenbereich von Denny's Café & Wein mit schmiedeeisernen Tischen" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="eager" width="1000" height="1250">
+          </div>
+          <div class="hidden sm:flex absolute -bottom-6 -left-6 bg-card border border-border rounded-2xl shadow-lg px-5 py-4 items-center gap-3">
+            <div class="w-11 h-11 rounded-full bg-accent/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-sm">Café mit Garten</p>
+              <p class="text-xs text-muted-foreground">Speisen vor Ort · Zum Mitnehmen · Lieferdienst</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USPs -->
+    <section class="bg-card border-y border-border">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid sm:grid-cols-3 gap-8">
+        <div class="reveal text-center sm:text-left">
+          <h3 class="font-display text-lg text-primary mb-1">Frisch & hausgemacht</h3>
+          <p class="text-sm text-foreground/70">Kuchen und Waffeln täglich frisch zubereitet.</p>
+        </div>
+        <div class="reveal reveal-d1 text-center sm:text-left">
+          <h3 class="font-display text-lg text-primary mb-1">Ruhiger Gartenbereich</h3>
+          <p class="text-sm text-foreground/70">Trotz zentraler Lage ein grüner, ruhiger Rückzugsort.</p>
+        </div>
+        <div class="reveal reveal-d2 text-center sm:text-left">
+          <h3 class="font-display text-lg text-primary mb-1">Herzliche Bedienung</h3>
+          <p class="text-sm text-foreground/70">Von Gästen wiederholt für Freundlichkeit gelobt.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Über uns -->
+    <section id="ueber-uns" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal order-2 md:order-1">
+        <p class="text-accent font-semibold text-sm tracking-wide uppercase mb-2">Über uns</p>
+        <h2 class="text-3xl sm:text-4xl text-primary mb-4">Café & Blumenladen, Tür an Tür</h2>
+        <p class="text-foreground/80 mb-4">Denny's Café & Wein liegt direkt neben dem Blumenladen in der Papenhuder Straße – deshalb ist bei uns immer etwas in Blüte. Unsere Gäste beschreiben den Ort immer wieder als kleine grüne Oase mitten in Hamburg-Nord.</p>
+        <p class="text-foreground/80">Ob Cappuccino am Vormittag, Waffeln am Nachmittag oder ein Glas Wein am Abend im Garten: Bei uns ist für jede Tageszeit der passende Platz.</p>
+      </div>
+      <div class="reveal reveal-d2 order-1 md:order-2 rounded-[28px] overflow-hidden border border-border shadow-lg">
+        <img src="images/storefront.jpg" alt="Eingang von Denny's Café & Wein direkt neben dem Blumenladen" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy" width="900" height="900">
+      </div>
+    </section>
+
+    <!-- Speisekarte -->
+    <section id="speisekarte" class="bg-card border-y border-border">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <div class="reveal max-w-xl mb-10">
+          <p class="text-accent font-semibold text-sm tracking-wide uppercase mb-2">Speisekarte</p>
+          <h2 class="text-3xl sm:text-4xl text-primary mb-4">Unsere Highlights</h2>
+          <p class="text-foreground/70">Eine kleine Auswahl unserer beliebtesten Kaffee- und Kuchenspezialitäten.</p>
+        </div>
+        <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <article class="bg-background border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-200">
+            <img src="images/waffeln-cappuccino.jpg" alt="Cappuccino mit Latte-Art auf unserer Terrasse" class="w-full h-40 object-cover object-[78%_58%]" loading="lazy" width="600" height="400">
+            <div class="p-5">
+              <h3 class="font-display text-lg mb-1">Cappuccino</h3>
+              <p class="text-sm text-foreground/70">Cremig, mit feiner Latte-Art. · 3,90 €</p>
+            </div>
+          </article>
+          <article class="bg-background border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-200">
+            <img src="images/cheesecake.jpg" alt="Hausgemachter Cheesecake mit Beerensauce" class="w-full h-40 object-cover" loading="lazy" width="600" height="400">
+            <div class="p-5">
+              <h3 class="font-display text-lg mb-1">Cheesecake</h3>
+              <p class="text-sm text-foreground/70">Cremig, mit hausgemachter Beerensauce.</p>
+            </div>
+          </article>
+          <article class="bg-background border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-200">
+            <img src="images/waffeln-cappuccino.jpg" alt="Belgische Waffeln mit frischen Früchten" class="w-full h-40 object-cover object-[20%_70%]" loading="lazy" width="600" height="400">
+            <div class="p-5">
+              <h3 class="font-display text-lg mb-1">Waffeln mit Nutella</h3>
+              <p class="text-sm text-foreground/70">Knusprig-weich, mit einer Portion Sahne. · 7,60 €</p>
+            </div>
+          </article>
+          <article class="bg-background border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-200">
+            <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?q=80&w=600&auto=format&fit=crop" alt="Ein Glas Glühwein im Winter" class="w-full h-40 object-cover" loading="lazy" width="600" height="400">
+            <div class="p-5">
+              <h3 class="font-display text-lg mb-1">Glühwein (Winter)</h3>
+              <p class="text-sm text-foreground/70">Unser beliebter Weihnachtsmarkt-Klassiker.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Interactive full menu -->
+        <div class="reveal">
+          <h3 class="font-display text-2xl text-primary mb-6">Die vollständige Karte</h3>
+
+          <div role="tablist" aria-label="Speisekarte Kategorien" class="flex flex-wrap gap-2 mb-8" id="menu-tabs">
+            <button role="tab" id="tab-kaffee" aria-controls="panel-kaffee" aria-selected="true" class="menu-tab cursor-pointer px-5 py-2.5 rounded-full text-sm font-semibold border border-border bg-primary text-on-primary focus-ring">Kaffee & Tee</button>
+            <button role="tab" id="tab-speisen" aria-controls="panel-speisen" aria-selected="false" tabindex="-1" class="menu-tab cursor-pointer px-5 py-2.5 rounded-full text-sm font-semibold border border-border bg-background text-foreground hover:bg-muted transition-colors duration-200 focus-ring">Waffeln & Herzhaftes</button>
+            <button role="tab" id="tab-suess" aria-controls="panel-suess" aria-selected="false" tabindex="-1" class="menu-tab cursor-pointer px-5 py-2.5 rounded-full text-sm font-semibold border border-border bg-background text-foreground hover:bg-muted transition-colors duration-200 focus-ring">Kuchen & Eis</button>
+            <button role="tab" id="tab-wein" aria-controls="panel-wein" aria-selected="false" tabindex="-1" class="menu-tab cursor-pointer px-5 py-2.5 rounded-full text-sm font-semibold border border-border bg-background text-foreground hover:bg-muted transition-colors duration-200 focus-ring">Wein & Bar</button>
+          </div>
+
+          <!-- Kaffee & Tee -->
+          <div role="tabpanel" id="panel-kaffee" aria-labelledby="tab-kaffee" class="tab-panel grid md:grid-cols-2 gap-x-10 gap-y-8">
+            <div>
+              <h4 class="font-display text-lg text-accent mb-3">Kaffee Spezialitäten</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex justify-between gap-4"><span>Espresso</span><span class="font-medium">2,70 €</span></li>
+                <li class="flex justify-between gap-4"><span>Espresso Doppio</span><span class="font-medium">3,90 €</span></li>
+                <li class="flex justify-between gap-4"><span>Espresso Macchiato</span><span class="font-medium">2,90 €</span></li>
+                <li class="flex justify-between gap-4"><span>Americano</span><span class="font-medium">3,00 €</span></li>
+                <li class="flex justify-between gap-4"><span>Lungo</span><span class="font-medium">3,00 €</span></li>
+                <li class="flex justify-between gap-4"><span>Cappuccino</span><span class="font-medium">3,90 €</span></li>
+                <li class="flex justify-between gap-4"><span>Mocha</span><span class="font-medium">4,40 €</span></li>
+                <li class="flex justify-between gap-4"><span>Con Panna</span><span class="font-medium">3,90 €</span></li>
+                <li class="flex justify-between gap-4"><span>Flat White</span><span class="font-medium">4,60 €</span></li>
+                <li class="flex justify-between gap-4"><span>Affogato</span><span class="font-medium">4,90 €</span></li>
+                <li class="flex justify-between gap-4"><span>Café Latte</span><span class="font-medium">4,40 €</span></li>
+                <li class="flex justify-between gap-4"><span>Latte Macchiato</span><span class="font-medium">4,40 €</span></li>
+                <li class="flex justify-between gap-4"><span>Eiskaffee / Eisschokolade</span><span class="font-medium">7,00 €</span></li>
+                <li class="flex justify-between gap-4"><span>Heisse Schokolade</span><span class="font-medium">4,70 €</span></li>
+              </ul>
+              <p class="text-xs text-muted-foreground mt-2">Latte Macchiato: Karamell, Vanille, Weiße Schokolade oder Haselnuss +0,50 €</p>
+            </div>
+            <div>
+              <h4 class="font-display text-lg text-accent mb-3">Tee</h4>
+              <ul class="space-y-2 text-sm mb-6">
+                <li class="flex justify-between gap-4"><span>Grüner / Schwarzer / Kräuter Tee (280ml)</span><span class="font-medium">3,80 €</span></li>
+                <li class="flex justify-between gap-4"><span>Hausgemachter Tee (Minze, Ingwer)</span><span class="font-medium">4,50 €</span></li>
+                <li class="flex justify-between gap-4"><span>Chai oder Matcha Latte (Bio)</span><span class="font-medium">4,90 €</span></li>
+              </ul>
+              <h4 class="font-display text-lg text-accent mb-3">Eistee</h4>
+              <ul class="space-y-2 text-sm mb-6">
+                <li class="flex justify-between gap-4"><span>Litschi-Eistee</span><span class="font-medium">5,70 €</span></li>
+                <li class="flex justify-between gap-4"><span>Zitronen- / Grüner / Früchte-Eistee</span><span class="font-medium">5,50 €</span></li>
+                <li class="flex justify-between gap-4"><span>Mango & Passionfruit Eistee</span><span class="font-medium">5,50 €</span></li>
+              </ul>
+              <h4 class="font-display text-lg text-accent mb-3">Erfrischungen</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex justify-between gap-4"><span>Fritz-Kola (200ml)</span><span class="font-medium">3,50 €</span></li>
+                <li class="flex justify-between gap-4"><span>Saftschorlen (Apfel, Rhabarber, Cranberry, Maracuja)</span><span class="font-medium">ab 3,80 €</span></li>
+                <li class="flex justify-between gap-4"><span>Orangensaft, frisch gepresst</span><span class="font-medium">ab 4,50 €</span></li>
+                <li class="flex justify-between gap-4"><span>Acqua Morelli (mit/ohne Kohlensäure)</span><span class="font-medium">ab 2,70 €</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Waffeln & Herzhaftes -->
+          <div role="tabpanel" id="panel-speisen" aria-labelledby="tab-speisen" class="tab-panel grid md:grid-cols-2 gap-x-10 gap-y-8" hidden>
+            <div>
+              <h4 class="font-display text-lg text-accent mb-3">Waffeln <span class="text-xs font-normal text-muted-foreground">(inkl. 1 Portion Sahne)</span></h4>
+              <ul class="space-y-2 text-sm mb-6">
+                <li class="flex justify-between gap-4"><span>mit Puderzucker</span><span class="font-medium">6,70 €</span></li>
+                <li class="flex justify-between gap-4"><span>mit Ahornsirup</span><span class="font-medium">7,60 €</span></li>
+                <li class="flex justify-between gap-4"><span>mit Nutella</span><span class="font-medium">7,60 €</span></li>
+                <li class="flex justify-between gap-4"><span>mit Nutella und Bananen</span><span class="font-medium">8,70 €</span></li>
+                <li class="flex justify-between gap-4"><span>mit roter Grütze</span><span class="font-medium">7,80 €</span></li>
+                <li class="flex justify-between gap-4"><span>mit einer Kugel Eis</span><span class="font-medium">8,70 €</span></li>
+                <li class="flex justify-between gap-4"><span>Waffeln Bananen Split</span><span class="font-medium">12,00 €</span></li>
+              </ul>
+              <h4 class="font-display text-lg text-accent mb-3">Croissant</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex justify-between gap-4"><span>Croissant</span><span class="font-medium">2,90 €</span></li>
+                <li class="flex justify-between gap-4"><span>Warmes Croissant mit Käse</span><span class="font-medium">4,40 €</span></li>
+                <li class="flex justify-between gap-4"><span>Warmes Croissant mit Käse & Schinken</span><span class="font-medium">5,30 €</span></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-display text-lg text-accent mb-3">Herzhaftes <span class="text-xs font-normal text-muted-foreground">(inkl. kleiner Salat)</span></h4>
+              <ul class="space-y-2 text-sm mb-6">
+                <li class="flex justify-between gap-4"><span>Spinat Feta Waffeln</span><span class="font-medium">9,50 €</span></li>
+                <li class="flex justify-between gap-4"><span>Schinken Käse Waffeln</span><span class="font-medium">9,50 €</span></li>
+                <li class="flex justify-between gap-4"><span>Kartoffelrösti mit Zwiebeln und Käse</span><span class="font-medium">9,00 €</span></li>
+                <li class="flex justify-between gap-4"><span>Kartoffelrösti mit Zwiebeln, Käse und Schinken</span><span class="font-medium">9,80 €</span></li>
+              </ul>
+              <h4 class="font-display text-lg text-accent mb-3">Eierspeisen <span class="text-xs font-normal text-muted-foreground">(2 Bio-Eier, Brot, Salat)</span></h4>
+              <ul class="space-y-2 text-sm mb-6">
+                <li class="flex justify-between gap-4"><span>Omelette mit Tomaten und Schnittlauch</span><span class="font-medium">8,00 €</span></li>
+                <li class="flex justify-between gap-4"><span>Omelette mit Spinat und Feta</span><span class="font-medium">9,00 €</span></li>
+                <li class="flex justify-between gap-4"><span>Omelette mit Schinken und Käse</span><span class="font-medium">8,70 €</span></li>
+              </ul>
+              <h4 class="font-display text-lg text-accent mb-3">Hot Dog <span class="text-xs font-normal text-muted-foreground">(auch vegan möglich)</span></h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex justify-between gap-4"><span>Happy Hot Dog</span><span class="font-medium">6,50 €</span></li>
+                <li class="flex justify-between gap-4"><span>Dänischer / "Frankfurt-Style" / Spicy Hot Dog</span><span class="font-medium">7,50 €</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Kuchen & Eis -->
+          <div role="tabpanel" id="panel-suess" aria-labelledby="tab-suess" class="tab-panel grid md:grid-cols-2 gap-x-10 gap-y-8" hidden>
+            <div>
+              <h4 class="font-display text-lg text-accent mb-3">Kuchen & Torte</h4>
+              <p class="text-sm text-foreground/80">Verschiedene hausgemachte Kuchen nach Tagesangebot – fragen Sie unser Team nach der aktuellen Auswahl, z. B. unseren beliebten Cheesecake.</p>
+            </div>
+            <div>
+              <h4 class="font-display text-lg text-accent mb-3">Eis Spezialitäten</h4>
+              <ul class="space-y-2 text-sm mb-4">
+                <li class="flex justify-between gap-4"><span>Rote Grütze</span><span class="font-medium">7,00 €</span></li>
+                <li class="flex justify-between gap-4"><span>Schwarzwaldbecher</span><span class="font-medium">7,00 €</span></li>
+                <li class="flex justify-between gap-4"><span>Coupe Dänemark</span><span class="font-medium">7,80 €</span></li>
+                <li class="flex justify-between gap-4"><span>Krokant Becher</span><span class="font-medium">7,90 €</span></li>
+                <li class="flex justify-between gap-4"><span>Bananensplit / Spaghetti-Eis</span><span class="font-medium">8,90 €</span></li>
+              </ul>
+              <p class="text-xs text-muted-foreground">Eissorten: Vanille, Schokolade, Brombeer-Sorbet, Walnuss · je Kugel 2,20 € · Portion Sahne 1,00 €</p>
+            </div>
+          </div>
+
+          <!-- Wein & Bar -->
+          <div role="tabpanel" id="panel-wein" aria-labelledby="tab-wein" class="tab-panel grid md:grid-cols-2 gap-x-10 gap-y-8" hidden>
+            <div>
+              <h4 class="font-display text-lg text-accent mb-3">Weißwein</h4>
+              <ul class="space-y-2 text-sm mb-6">
+                <li class="flex justify-between gap-4"><span>Grauer Burgunder, 0,2l</span><span class="font-medium">7,00 €</span></li>
+                <li class="flex justify-between gap-4"><span>Riesling, 0,2l</span><span class="font-medium">7,50 €</span></li>
+                <li class="flex justify-between gap-4"><span>Roséwein Cuvée trocken, 0,2l</span><span class="font-medium">6,80 €</span></li>
+                <li class="flex justify-between gap-4"><span>Weisswein- / Rosé-Schorle, 0,2l</span><span class="font-medium">5,70 €</span></li>
+              </ul>
+              <h4 class="font-display text-lg text-accent mb-3">Rotwein</h4>
+              <ul class="space-y-2 text-sm mb-6">
+                <li class="flex justify-between gap-4"><span>Garda Merlot, 0,2l</span><span class="font-medium">6,80 €</span></li>
+                <li class="flex justify-between gap-4"><span>Maragda Negre, 0,2l</span><span class="font-medium">7,50 €</span></li>
+              </ul>
+              <h4 class="font-display text-lg text-accent mb-3">Ratsherrn Bier</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex justify-between gap-4"><span>Pilsener, Hell, Alsterwasser</span><span class="font-medium">4,00 €</span></li>
+                <li class="flex justify-between gap-4"><span>Weizen IPA</span><span class="font-medium">4,60 €</span></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-display text-lg text-accent mb-3">Aus der Bar</h4>
+              <ul class="space-y-2 text-sm mb-6">
+                <li class="flex justify-between gap-4"><span>Aperol / Campari / Hugo Spritz</span><span class="font-medium">8,00 €</span></li>
+                <li class="flex justify-between gap-4"><span>Limoncello- / Liliet Wild Berry Spritz</span><span class="font-medium">8,50 €</span></li>
+                <li class="flex justify-between gap-4"><span>Gin Tonic (Bombay Sapphire)</span><span class="font-medium">9,60 €</span></li>
+                <li class="flex justify-between gap-4"><span>Alkoholfreie Spritz-Variationen</span><span class="font-medium">ab 7,00 €</span></li>
+              </ul>
+              <h4 class="font-display text-lg text-accent mb-3">Champagner & Prosecco</h4>
+              <ul class="space-y-2 text-sm">
+                <li class="flex justify-between gap-4"><span>Alfred Gratien Brut Classique, 0,1l</span><span class="font-medium">12,00 €</span></li>
+                <li class="flex justify-between gap-4"><span>Mionetto Vivo Spumante, 0,1l</span><span class="font-medium">4,60 €</span></li>
+                <li class="flex justify-between gap-4"><span>Henkell Alkoholfreier Sekt, 0,1l</span><span class="font-medium">4,10 €</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galerie / Ambiente -->
+    <section id="galerie">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <div class="reveal max-w-xl mb-12">
+          <p class="text-accent font-semibold text-sm tracking-wide uppercase mb-2">Ambiente</p>
+          <h2 class="text-3xl sm:text-4xl text-primary mb-4">Ein Ort, der glücklich macht</h2>
+          <p class="text-foreground/70">Direkt neben unserem Blumenladen gelegen – ruhig, grün und einladend, mitten in Hamburg-Nord. Zum Vergrößern anklicken.</p>
+        </div>
+        <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-4" id="gallery">
+          <button type="button" class="gallery-item cursor-pointer group relative rounded-2xl overflow-hidden focus-ring" data-full="images/garden-terrace.jpg" data-caption="Gartenbereich des Cafés mit schmiedeeisernen Tischen und Sitzplätzen">
+            <img src="images/garden-terrace.jpg" alt="Gartenbereich des Cafés mit schmiedeeisernen Tischen und Sitzplätzen" class="w-full h-48 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="500" height="560">
+            <span class="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300"></span>
+          </button>
+          <button type="button" class="gallery-item cursor-pointer group relative rounded-2xl overflow-hidden focus-ring" data-full="images/waffeln-cappuccino.jpg" data-caption="Kaffeetisch mit Waffeln und Cappuccino auf der Terrasse">
+            <img src="images/waffeln-cappuccino.jpg" alt="Kaffeetisch mit Waffeln und Cappuccino auf der Terrasse" class="w-full h-48 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="500" height="560">
+            <span class="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300"></span>
+          </button>
+          <button type="button" class="gallery-item cursor-pointer group relative rounded-2xl overflow-hidden focus-ring" data-full="images/storefront.jpg" data-caption="Eingang von Denny's Café & Wein direkt neben dem Blumenladen">
+            <img src="images/storefront.jpg" alt="Eingang von Denny's Café & Wein direkt neben dem Blumenladen" class="w-full h-48 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="500" height="560">
+            <span class="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300"></span>
+          </button>
+          <button type="button" class="gallery-item cursor-pointer group relative rounded-2xl overflow-hidden focus-ring" data-full="images/cheesecake.jpg" data-caption="Hausgemachter Cheesecake mit Beerensauce">
+            <img src="images/cheesecake.jpg" alt="Hausgemachter Cheesecake mit Beerensauce" class="w-full h-48 sm:h-56 object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" width="500" height="560">
+            <span class="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bewertungen -->
+    <section id="bewertungen" class="bg-card border-y border-border">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <div class="reveal text-center max-w-xl mx-auto mb-12">
+          <p class="text-accent font-semibold text-sm tracking-wide uppercase mb-2">Bewertungen</p>
+          <h2 class="text-3xl sm:text-4xl text-primary mb-4">Was unsere Gäste sagen</h2>
+          <div class="flex items-center justify-center gap-2" role="img" aria-label="4,9 von 5 Sternen, basierend auf 214 Rezensionen">
+            <span class="star text-xl" aria-hidden="true">★★★★★</span>
+            <span class="font-semibold">4,9</span>
+            <span class="text-foreground/60 text-sm">(214 Rezensionen auf Google)</span>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <blockquote class="reveal bg-background border border-border rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <span class="star flex mb-3" aria-hidden="true">★★★★★</span>
+            <p class="text-foreground/80 mb-4">„Das Café gehört zu dem angrenzenden Blumenladen, toll eingerichtet, trotz Lage direkt an der Straße war es sehr ruhig. Schönes Ambiente, sehr nette Bedienung, leckeres Essen, frisch zubereitet."</p>
+            <footer class="text-sm font-medium">Yannick S. <span class="text-foreground/50 font-normal">· Local Guide, 219 Rezensionen</span></footer>
+          </blockquote>
+          <blockquote class="reveal reveal-d1 bg-background border border-border rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <span class="star flex mb-3" aria-hidden="true">★★★★★</span>
+            <p class="text-foreground/80 mb-4">„Die Crew ist super freundlich und aufmerksam – man fühlt sich sofort willkommen. Kaffee und Kuchen waren richtig lecker, und die belgischen Waffeln sind einfach unwiderstehlich."</p>
+            <footer class="text-sm font-medium">E. B. Laureano <span class="text-foreground/50 font-normal">· Local Guide, 300 Rezensionen</span></footer>
+          </blockquote>
+          <blockquote class="reveal reveal-d2 bg-background border border-border rounded-2xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <span class="star flex mb-3" aria-hidden="true">★★★★★</span>
+            <p class="text-foreground/80 mb-4">„Highly recommended if you're around the neighborhood. Great food, lovely atmosphere, friendly and kind team. Will definitely come back again to try other dishes and the cakes."</p>
+            <footer class="text-sm font-medium">Muthia <span class="text-foreground/50 font-normal">· Local Guide, 35 Rezensionen</span></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Standort / CTA -->
+    <section id="standort" class="relative overflow-hidden bg-primary text-on-primary">
+      <div class="petal-blob w-96 h-96 bg-accent -bottom-24 -right-24 opacity-20" aria-hidden="true"></div>
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 grid md:grid-cols-2 gap-12">
+        <div class="reveal">
+          <h2 class="text-3xl sm:text-4xl mb-6">Besuchen Sie uns</h2>
+          <dl class="space-y-5 text-on-primary/90">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <div><dt class="sr-only">Adresse</dt><dd>Papenhuder Str. 58, 22087 Hamburg-Nord</dd></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div><dt class="sr-only">Öffnungszeiten</dt><dd>Heute geöffnet · schließt um 21:00 Uhr</dd></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div><dt class="sr-only">Telefon</dt><dd><a href="tel:+4940222796" class="underline hover:no-underline focus-ring rounded-sm">040 222796</a></dd></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/></svg>
+              <div><dt class="sr-only">Preis</dt><dd>10–20 € pro Person</dd></div>
+            </div>
+          </dl>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <span class="bg-on-primary/10 border border-on-primary/30 rounded-full px-4 py-1.5 text-sm">Speisen vor Ort</span>
+            <span class="bg-on-primary/10 border border-on-primary/30 rounded-full px-4 py-1.5 text-sm">Zum Mitnehmen</span>
+            <span class="bg-on-primary/10 border border-on-primary/30 rounded-full px-4 py-1.5 text-sm">Lieferdienst</span>
+          </div>
+          <a href="https://maps.app.goo.gl/ygDeqTXMmqGWFMpd9" target="_blank" rel="noopener noreferrer" class="cursor-pointer mt-8 inline-flex items-center justify-center bg-accent text-on-accent px-6 py-3.5 rounded-full font-semibold hover:bg-on-primary hover:text-primary transition-colors duration-200 focus-ring">
+            Route planen
+          </a>
+        </div>
+        <a href="https://maps.app.goo.gl/ygDeqTXMmqGWFMpd9" target="_blank" rel="noopener noreferrer"
+           class="reveal reveal-d2 cursor-pointer group relative rounded-2xl overflow-hidden border border-on-primary/20 min-h-[280px] flex items-center justify-center bg-[url('images/storefront.jpg')] bg-cover bg-center focus-ring">
+          <span class="absolute inset-0 bg-foreground/50 group-hover:bg-foreground/40 transition-colors duration-200"></span>
+          <span class="relative inline-flex items-center gap-2 bg-on-primary text-primary px-6 py-3.5 rounded-full font-semibold group-hover:scale-105 transition-transform duration-200">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            Auf Google Maps öffnen
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-foreground/90 p-4" role="dialog" aria-modal="true" aria-label="Bildvorschau">
+    <button id="lightbox-close" type="button" class="cursor-pointer absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 inline-flex items-center justify-center rounded-full bg-on-primary/10 text-on-primary hover:bg-on-primary/20 transition-colors duration-200 focus-ring" aria-label="Schließen">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <figure class="max-w-4xl w-full">
+      <img id="lightbox-img" src="" alt="" class="w-full max-h-[80vh] object-contain rounded-2xl">
+      <figcaption id="lightbox-caption" class="text-on-primary/80 text-sm text-center mt-4"></figcaption>
+    </figure>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-foreground text-background/90">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+      <div class="flex items-center gap-3">
+        <img src="images/logo.jpg" alt="Denny's Café & Wein Logo" class="w-10 h-10 rounded-full object-cover border border-background/20" width="150" height="150">
+        <p class="font-display text-background">Denny's Café &amp; Wein</p>
+      </div>
+      <p>© 2026 Denny's Café & Wein · Papenhuder Str. 58, 22087 Hamburg</p>
+    </div>
+  </footer>
+
+<script>
+(function () {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Mobile nav toggle
+  var menuToggle = document.getElementById('menu-toggle');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var iconOpen = document.getElementById('icon-open');
+  var iconClose = document.getElementById('icon-close');
+  menuToggle.addEventListener('click', function () {
+    var expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!expanded));
+    mobileMenu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+  });
+  document.querySelectorAll('#mobile-menu a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      mobileMenu.classList.add('hidden');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    });
+  });
+
+  // Scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  }
+
+  // Active nav link highlighting
+  var navLinks = document.querySelectorAll('[data-nav]');
+  var sections = Array.prototype.slice.call(navLinks)
+    .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+  if ('IntersectionObserver' in window && sections.length) {
+    var navIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var id = '#' + entry.target.id;
+        var link = document.querySelector('a[data-nav][href="' + id + '"]');
+        if (!link) return;
+        if (entry.isIntersecting) {
+          navLinks.forEach(function (l) { l.classList.remove('text-primary', 'font-semibold'); });
+          link.classList.add('text-primary', 'font-semibold');
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    sections.forEach(function (s) { navIo.observe(s); });
+  }
+
+  // Animated review count
+  var countEl = document.getElementById('count-reviews');
+  function animateCount(el, target, duration) {
+    if (reduceMotion) { el.textContent = target; return; }
+    var start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      el.textContent = Math.floor(progress * target);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+  if (countEl) animateCount(countEl, 214, 1400);
+
+  // Tabs
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.menu-tab'));
+  function activateTab(tab) {
+    tabs.forEach(function (t) {
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      var active = t === tab;
+      t.setAttribute('aria-selected', String(active));
+      t.tabIndex = active ? 0 : -1;
+      t.classList.toggle('bg-primary', active);
+      t.classList.toggle('text-on-primary', active);
+      t.classList.toggle('bg-background', !active);
+      t.classList.toggle('text-foreground', !active);
+      if (panel) panel.hidden = !active;
+    });
+    tab.focus();
+  }
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () { activateTab(tab); });
+    tab.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        var next = e.key === 'ArrowRight' ? (i + 1) % tabs.length : (i - 1 + tabs.length) % tabs.length;
+        activateTab(tabs[next]);
+      }
+    });
+  });
+
+  // Lightbox
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var lightboxCaption = document.getElementById('lightbox-caption');
+  var lightboxClose = document.getElementById('lightbox-close');
+  var lastFocused = null;
+
+  function openLightbox(src, caption) {
+    lastFocused = document.activeElement;
+    lightboxImg.src = src;
+    lightboxImg.alt = caption || '';
+    lightboxCaption.textContent = caption || '';
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    lightboxClose.focus();
+  }
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+  document.querySelectorAll('.gallery-item').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      openLightbox(btn.getAttribute('data-full'), btn.getAttribute('data-caption'));
+    });
+  });
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
+  });
+})();
+</script>
+</body>
+</html>
